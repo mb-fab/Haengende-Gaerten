@@ -3,6 +3,7 @@
 
 // rendering quality
 $fn = 200;
+nothing = 0.05;
 
 // material to cut from
 material_z = 3;
