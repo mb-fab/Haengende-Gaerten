@@ -10,15 +10,23 @@ material_z = 3;
 
 // wall configuration: bounding box measures
 wall_x = 550;
-wall_y = 150;
+wall_y = 30;
 wall_z = 400;
 
-wall_width = 30;
-foot_z = 30;
+foot_y_back = 130;
+foot_y_front = 200;
 
-// pots are hung at wall supports
+// foot height
+foot_z = 25;
+
+// rounded corners at front and back of the foot
+foot_round_y = 20;
+
+// number of support beams
 support_count = 5;
-support_z = 30;
+
+// height of a support beam
+support_z = 20;
 
 // pot configuration: outer measures of the top opening
 pot_x = 70;
