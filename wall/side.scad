@@ -84,7 +84,7 @@ module wall_side()
                 [
                 material_z*2,
                 material_z,
-                support_z/3
+                support_z/2
                 ], center=true);
         }
     }
