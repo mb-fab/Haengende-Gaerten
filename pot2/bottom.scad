@@ -1,6 +1,7 @@
 
 include <../config.scad>;
 include <config.scad>;
+use <../screw.scad>;
 
 bottom_y = pot_y - 2*material_z - inset_front - inset_back;
 
@@ -41,6 +42,7 @@ module pot_bottom()
     {
         pot_bottom_without_holes();
 
+        // hole for water
         translate([
             0,
             - bottom_y/2,
@@ -53,6 +55,16 @@ module pot_bottom()
         circle(
             r = hole_radius
             );
+
+        // left screw
+        translate([-pot_x/2-nothing*2, -bottom_y/2+material_z/2, 0])
+        rotate([0, -90, 0])
+        screw_cavity();
+
+        // right screw
+        translate([+pot_x/2+nothing*2, -bottom_y/2+material_z/2, 0])
+        rotate([0, 90, 0])
+        screw_cavity();
     }
 }
 

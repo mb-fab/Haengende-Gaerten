@@ -17,6 +17,6 @@ cuts-hairline.svg: cuts-red.svg
 	cat $< | sed -e "s/stroke-width=\"\([0-9]*\.[0-9]*\)\"//g" -e "s/stroke=\"red\"/stroke=\"red\" stroke-width=\"0.1\"/g" > $@
 
 clean:
-	rm -fr *.png projection*.svg cuts*.svg
+	rm -fr *.png */*.png projection*.svg cuts*.svg
 
 
