@@ -36,3 +36,11 @@ pot_z = 50;
 
 // pots have hooks to hang at the wall supports
 hook_width = 10;
+
+// screw: M3
+screw_radius = 3.005;
+screw_length = 8;
+washer_radius = 7;
+nut_height = 2.4 -0.1;
+nut_wrench_size = 5.5 -0.1;
+nut_offset = material_z*1.5;

@@ -2,7 +2,7 @@
 include <../config.scad>;
 use <../corners.scad>;
 
-module wall_vertical_without_holes()
+module wall_side_without_holes()
 {
     // horizontal
     translate([0, 0, wall_z/2])
@@ -62,11 +62,11 @@ module wall_vertical_without_holes()
         );
 }
 
-module wall_vertical()
+module wall_side()
 {
     difference()
     {
-        wall_vertical_without_holes();
+        wall_side_without_holes();
 
         // nose cutouts for horizontal beams
         usable_z = wall_z - pot_z;
@@ -90,4 +90,4 @@ module wall_vertical()
     }
 }
 
-wall_vertical();
+wall_side();

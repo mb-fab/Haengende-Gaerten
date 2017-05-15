@@ -1,7 +1,7 @@
 
 include <../config.scad>;
-use <vertical.scad>;
-use <horizontal.scad>;
+use <side.scad>;
+use <beam.scad>;
 
 module wall()
 {
@@ -13,7 +13,7 @@ module wall()
             ])
     {
         translate([x, 0, 0])
-        wall_vertical();
+        wall_side();
     }
 
     // horizontal parts
@@ -28,7 +28,7 @@ module wall()
             0,
             offset_z + (i-1) * delta_z
             ])
-        wall_horizontal();
+        wall_beam();
     }
 }
 

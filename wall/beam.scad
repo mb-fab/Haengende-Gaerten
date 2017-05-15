@@ -1,7 +1,7 @@
 
 include <../config.scad>;
 
-module wall_horizontal()
+module wall_beam()
 {
     // beam
     cube([
@@ -23,4 +23,4 @@ module wall_horizontal()
             ], center=true);
 }
 
-wall_horizontal();
+wall_beam();
