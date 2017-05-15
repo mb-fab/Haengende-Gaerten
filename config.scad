@@ -13,8 +13,9 @@ wall_x = 550;
 wall_y = 30;
 wall_z = 400;
 
-foot_y_back = 130;
-foot_y_front = 200;
+// length of the foot towards the front and back of the wall (asymmetrical)
+foot_y_back = 100;
+foot_y_front = 175;
 
 // foot height
 foot_z = 25;
@@ -23,10 +24,10 @@ foot_z = 25;
 foot_round_y = 20;
 
 // number of support beams
-support_count = 5;
+support_count = 6;
 
 // height of a support beam
-support_z = 20;
+support_z = 25;
 
 // pot configuration: outer measures of the top opening
 pot_x = 70;

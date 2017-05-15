@@ -17,11 +17,17 @@ module wall()
     }
 
     // horizontal parts
-    delta_z = wall_z/support_count;
+    usable_z = wall_z - pot_z;
+    delta_z = usable_z / (support_count-1);
+    offset_z = pot_z - support_z/2;
     color("brown")
     for (i=[1:support_count])
     {
-        translate([0, 0, (i-0.5)*delta_z])
+        translate([
+            0,
+            0,
+            offset_z + (i-1) * delta_z
+            ])
         wall_horizontal();
     }
 }

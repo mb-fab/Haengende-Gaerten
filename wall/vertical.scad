@@ -2,7 +2,7 @@
 include <../config.scad>;
 use <../corners.scad>;
 
-module wall_vertical()
+module wall_vertical_without_holes()
 {
     // horizontal
     translate([0, 0, wall_z/2])
@@ -60,6 +60,34 @@ module wall_vertical()
         foot_z,
         material_z
         );
+}
+
+module wall_vertical()
+{
+    difference()
+    {
+        wall_vertical_without_holes();
+
+        // nose cutouts for horizontal beams
+        usable_z = wall_z - pot_z;
+        delta_z = usable_z / (support_count-1);
+        offset_z = pot_z - support_z/2;
+        color("brown")
+        for (i=[1:support_count])
+        {
+            translate([
+                0,
+                0,
+                offset_z + (i-1) * delta_z
+                ])
+            cube(
+                [
+                material_z*2,
+                material_z,
+                support_z/3
+                ], center=true);
+        }
+    }
 }
 
 wall_vertical();
