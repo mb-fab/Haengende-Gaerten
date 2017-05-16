@@ -4,6 +4,7 @@ include <config.scad>;
 use <../screw.scad>;
 
 bottom_y = pot_y - 2*material_z - inset_front - inset_back;
+bottom_sides_center = - pot_y/2 + material_z + inset_back;
 
 module pot_bottom_without_holes()
 {
@@ -26,7 +27,7 @@ module pot_bottom_without_holes()
             ])
         translate([
             x,
-            - pot_y/2 + inset_bottom + material_z,
+            bottom_sides_center,
             0
             ])
         cube([
@@ -57,12 +58,20 @@ module pot_bottom()
             );
 
         // left screw
-        translate([-pot_x/2-nothing*2, -bottom_y/2+material_z/2, 0])
+        translate([
+            - pot_x/2 - nothing*2,
+            bottom_sides_center,
+            0
+            ])
         rotate([0, -90, 0])
         screw_cavity();
 
         // right screw
-        translate([+pot_x/2+nothing*2, -bottom_y/2+material_z/2, 0])
+        translate([
+            +pot_x/2+nothing*2,
+            bottom_sides_center,
+            0
+            ])
         rotate([0, 90, 0])
         screw_cavity();
     }
