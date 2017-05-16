@@ -6,7 +6,20 @@ $fn = 200;
 nothing = 0.05;
 
 // material to cut from
+material_x = 1000;
+material_y = 500;
 material_z = 3;
+
+// plate to cut from
+module base_material()
+{
+    translate([0, 0, -material_z*3/2-nothing])
+    cube([
+        material_x,
+        material_y,
+        material_z
+        ]);
+}
 
 // wall configuration: bounding box measures
 wall_x = 550;
@@ -19,6 +32,7 @@ wall_round_top_z = 8;
 // length of the foot towards the front and back of the wall (asymmetrical)
 foot_y_back = 100;
 foot_y_front = 175;
+foot_y = foot_y_front + foot_y_back;
 
 // foot height
 foot_z = 25;
@@ -36,8 +50,8 @@ support_count = 6;
 support_z = 25;
 
 // pot configuration: outer measures of the top opening
-pot_x = 70;
-pot_y = 70;
+pot_x = 80;
+pot_y = 80;
 pot_z = 50;
 
 // pots have hooks to hang at the wall supports

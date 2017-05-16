@@ -11,7 +11,7 @@ module pot2()
     color("brown")
     translate([
         0,
-        -material_z * 3/2 - inset_bottom,
+        -material_z * 3/2 - inset_back,
         - pot_z + material_z/2 + inset_bottom
         ])
     pot_bottom();

@@ -1,22 +1,18 @@
 
 project_files = $(wildcard *.scad)
 
-all: model.png pot/pot.png pot2/pot2.png wall/wall.png cuts-hairline.svg
+all: model.png pot/pot.png pot2/pot2.png wall/wall.png pot2 wall
 
 %.png: %.scad $(project_files)
 	openscad $< --imgsize=1920,1280 --preview -o $@
 	convert $@ -trim $@
 
-projection.svg: projection.scad $(project_files)
-	openscad $< -o $@
+.PHONY: pot2 wall
+pot2:
+	cd pot2 && make
 
-cuts-red.svg: projection.svg
-	cat $< | replace "stroke=\"black\" fill=\"lightgray\"" "stroke=\"red\" fill=\"none\"" > $@
-
-cuts-hairline.svg: cuts-red.svg
-	cat $< | sed -e "s/stroke-width=\"\([0-9]*\.[0-9]*\)\"//g" -e "s/stroke=\"red\"/stroke=\"red\" stroke-width=\"0.1\"/g" > $@
+wall:
+	cd wall && make
 
 clean:
-	rm -fr *.png */*.png projection*.svg cuts*.svg
-
-
+	rm -fr *.png */*.png

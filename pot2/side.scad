@@ -3,7 +3,7 @@ include <../config.scad>;
 include <config.scad>;
 use <../corners.scad>;
 
-module pot_side_without_holes(x)
+module pot_side_without_holes(x=0)
 {
     // side wall
     translate([
@@ -76,7 +76,7 @@ module pot_side_without_holes(x)
         );
 }
 
-module pot_side(x)
+module pot_side(x=0)
 {
     difference()
     {
@@ -120,4 +120,4 @@ module pot_side(x)
     }
 }
 
-pot_side(0);
+pot_side();
