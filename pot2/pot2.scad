@@ -7,6 +7,7 @@ use <bottom.scad>;
 
 module pot2()
 {
+    // bottom
     color("brown")
     translate([
         0,
@@ -15,6 +16,7 @@ module pot2()
         ])
     pot_bottom();
 
+    // left and right side with hooks
     color("darkgreen")
     for (x = [
             -pot_x/2 + material_z/2,
@@ -24,6 +26,7 @@ module pot2()
         pot_side(x);
     }
 
+    // front
     color("darkblue")
     translate([
         0,
@@ -32,6 +35,7 @@ module pot2()
         ])
     pot_front();
 
+    // back
     color("darkcyan")
     translate([
         0,

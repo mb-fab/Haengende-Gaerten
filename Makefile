@@ -4,7 +4,7 @@ project_files = $(wildcard *.scad)
 all: model.png pot/pot.png pot2/pot2.png wall/wall.png cuts-hairline.svg
 
 %.png: %.scad $(project_files)
-	openscad $< --imgsize=1280,1024 --preview -o $@
+	openscad $< --imgsize=1920,1280 --preview -o $@
 	convert $@ -trim $@
 
 projection.svg: projection.scad $(project_files)

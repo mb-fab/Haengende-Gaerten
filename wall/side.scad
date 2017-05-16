@@ -4,7 +4,7 @@ use <../corners.scad>;
 
 module wall_side_without_holes()
 {
-    // horizontal
+    // vertical side bar
     translate([0, 0, wall_z/2])
     cube([
         material_z,
@@ -12,7 +12,12 @@ module wall_side_without_holes()
         wall_z
         ], center=true);
 
-    // foot
+    // rounded top excrescence
+    translate([0, 0, wall_z])
+    rotate([90, 0, 90])
+    round_tip(wall_y, wall_round_top_z, material_z, wall_y/4);
+
+    // horizontal foot bars
     translate([0, -(foot_y_front - foot_round_y)/2, +foot_z/2])
     cube([
         material_z,
@@ -87,6 +92,18 @@ module wall_side()
                 support_z/2
                 ], center=true);
         }
+
+        // foot gap
+        translate([
+            0,
+            (foot_y_back - foot_y_front)/2,
+            foot_gap_z/2
+            ])
+        cube([
+            material_z*2,
+            foot_gap_y,
+            foot_gap_z + nothing
+            ], center=true);
     }
 }
 

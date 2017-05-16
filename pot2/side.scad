@@ -1,6 +1,7 @@
 
 include <../config.scad>;
 include <config.scad>;
+use <../corners.scad>;
 
 module pot_side_without_holes(x)
 {
@@ -17,6 +18,7 @@ module pot_side_without_holes(x)
         ], center=true);
 
     // upper hook part
+    upper_hook_part_length = hook_width*2 + material_z;
     translate([
         x,
         0,
@@ -24,11 +26,30 @@ module pot_side_without_holes(x)
         ])
     cube([
         material_z,
-        hook_width*2 + material_z,
+        upper_hook_part_length,
         hook_width
         ], center=true);
 
-    // hook
+    // rounded top on the upper hook part
+    translate([x, 0, hook_width])
+    rotate([90, 0, 90])
+    round_tip(
+        upper_hook_part_length,
+        hook_round_top_z,
+        material_z,
+        upper_hook_part_length/3
+        );
+
+    // rounded transition from top edge to hook
+    translate([x, -material_z/2-hook_width, 0])
+    rotate([90, 0, -90])
+    round_corner_inside(
+        pot_x - hook_width,
+        hook_width,
+        material_z
+        );
+
+    // back hook part
     translate([
         x,
         hook_width/2 + material_z/2,
@@ -39,6 +60,20 @@ module pot_side_without_holes(x)
         hook_width,
         support_z
         ], center=true);
+
+    // round bottom on the back side of the hook
+    translate([
+        x,
+        material_z/2 + hook_width/2,
+        -support_z
+        ])
+    rotate([-90, 0, 90])
+    round_tip(
+        hook_width,
+        hook_round_bottom_z,
+        material_z,
+        hook_width/3
+        );
 }
 
 module pot_side(x)
