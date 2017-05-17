@@ -16,3 +16,6 @@ wall:
 
 clean:
 	rm -fr *.png */*.png
+	cd pot2 && make clean
+	cd wall && make clean
+

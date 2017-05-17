@@ -70,7 +70,7 @@ hook_width = 10;
 // screw: M3
 screw_diameter = 2.85;
 screw_length = 5.5;
-nut_height = 2.4 -0.5;
-nut_wrench_size = 5.0;
+nut_height = 2.55;
+nut_wrench_size = 5.2;
 nut_offset = material_z;
 washer_radius = 7;
