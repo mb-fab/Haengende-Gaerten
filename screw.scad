@@ -15,8 +15,8 @@ module screw_cavity()
         -screw_length/2
         ])
     cube([
-        screw_radius,
-        screw_radius,
+        screw_diameter,
+        material_z + 2*nothing,
         screw_length
         ], center=true);
 
@@ -24,11 +24,11 @@ module screw_cavity()
     translate([
         0,
         0,
-        -nut_offset
+        - nut_offset - nut_height/2
         ])
     cube([
         nut_wrench_size,
-        nut_wrench_size,
+        material_z + 2*nothing,
         nut_height
         ], center=true);
 }

@@ -4,5 +4,6 @@
 .*.~lock
 
 # Outputs
+*.png
 *.svg
 

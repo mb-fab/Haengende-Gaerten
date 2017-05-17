@@ -63,6 +63,7 @@ module pot_bottom()
             bottom_sides_center,
             0
             ])
+        rotate([90, 0, 0])
         rotate([0, -90, 0])
         screw_cavity();
 
@@ -72,6 +73,7 @@ module pot_bottom()
             bottom_sides_center,
             0
             ])
+        rotate([90, 0, 0])
         rotate([0, 90, 0])
         screw_cavity();
     }
