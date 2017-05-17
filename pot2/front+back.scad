@@ -1,6 +1,7 @@
 
 include <../config.scad>;
 include <config.scad>;
+use <../screw.scad>;
 
 module pot_front_without_holes()
 {
@@ -33,7 +34,7 @@ module pot_front_without_holes()
             ], center=true);
 }
 
-module pot_front()
+module pot_front_with_nose_cutout()
 {
     difference()
     {
@@ -49,9 +50,27 @@ module pot_front()
     }
 }
 
+module pot_front()
+{
+    difference()
+    {
+        pot_front_with_nose_cutout();
+
+        // right screw cutout
+        translate([pot_x/2, 0, -pot_z/2])
+        rotate([0, 90, 0])
+        screw_cavity();
+
+        // left screw cutout
+        translate([-pot_x/2, 0, -pot_z/2])
+        rotate([0, -90, 0])
+        screw_cavity();
+    }
+}
+
 module pot_back()
 {
-    pot_front();
+    pot_front_with_nose_cutout();
 
     translate([
         0,

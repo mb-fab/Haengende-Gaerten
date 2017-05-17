@@ -17,7 +17,7 @@ module screw_cavity()
     cube([
         screw_diameter,
         material_z + 2*nothing,
-        screw_length
+        screw_length + 3*nothing
         ], center=true);
 
     // cavity for the nut
