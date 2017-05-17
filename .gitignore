@@ -7,3 +7,6 @@
 *.png
 *.svg
 
+# Releases
+release/
+

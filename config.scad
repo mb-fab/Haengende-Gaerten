@@ -53,10 +53,12 @@ support_z = 25;
 support_z_offset = 50;
 
 // pot configuration: outer measures of the top opening
+
 // small pots:
 pot_x = 70;
 pot_y = 70;
 pot_z = 40;
+
 /*
 // medium size pots:
 pot_x = 80;

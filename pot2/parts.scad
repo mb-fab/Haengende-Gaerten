@@ -9,12 +9,12 @@ spacing = 1;
 
 module parts()
 {
-    translate([pot_x/2, material_z/2, 0])
+    translate([pot_x/2, material_z, 0])
     // mirror because we have the laminated surface facing down during lasercutting
     mirror([0, 1, 0])
     pot_bottom();
 
-    y_side1 = pot_y*3/2 + spacing;
+    y_side1 = pot_y + pot_z - material_z + spacing;
     translate([0, y_side1, 0])
     rotate([0, 90, 90])
     pot_side();

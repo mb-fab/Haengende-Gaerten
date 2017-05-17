@@ -1,6 +1,5 @@
 
 include <../config.scad>;
-use <beam.scad>;
 use <side.scad>;
 
 spacing = 1;
@@ -8,14 +7,20 @@ spacing = 1;
 // planar arrangement of all parts required for the wall
 module parts()
 {
-    // middle supports
-    translate([wall_x/2, support_z/2, 0])
-    for (i=[0:support_count-1])
-    {
-        translate([0, i*(support_z + spacing), 0])
-        rotate([90, 0, 0])
-        wall_beam();
-    }
+    // first side structure
+    translate([foot_y_back, 0, 0])
+    rotate([0, 90, 90])
+    wall_side();
+
+    // second side structure
+    translate([
+        foot_y + foot_y_front + spacing,
+        0,
+        0
+        ])
+    mirror()
+    rotate([0, 90, 90])
+    wall_side();
 }
 
 color("brown")
