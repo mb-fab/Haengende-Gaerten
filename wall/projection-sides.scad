@@ -1,5 +1,5 @@
 
-use <parts.scad>;
+use <parts-sides.scad>;
 
 projection()
 parts();

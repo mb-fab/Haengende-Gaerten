@@ -24,14 +24,14 @@ module base_material()
 // wall configuration: bounding box measures
 wall_x = 550;
 wall_y = 30;
-wall_z = 400;
+wall_z = 510;
 
 // the round top is added on top of the wall
 wall_round_top_z = 8;
 
 // length of the foot towards the front and back of the wall (asymmetrical)
 foot_y_back = 100;
-foot_y_front = 175;
+foot_y_front = 190;
 foot_y = foot_y_front + foot_y_back;
 
 // foot height
@@ -44,10 +44,13 @@ foot_gap_y = (foot_y_front + foot_y_back) * 0.8;
 foot_gap_z = material_z;
 
 // number of support beams
-support_count = 6;
+support_count = 8;
 
 // height of a support beam
 support_z = 25;
+
+// offset of first support from z=0
+support_z_offset = 50;
 
 // pot configuration: outer measures of the top opening
 // small pots:

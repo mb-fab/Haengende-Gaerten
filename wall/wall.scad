@@ -17,9 +17,9 @@ module wall()
     }
 
     // horizontal parts
-    usable_z = wall_z - pot_z;
+    usable_z = wall_z - support_z_offset ;
     delta_z = usable_z / (support_count-1);
-    offset_z = pot_z - support_z/2;
+    offset_z = support_z_offset - support_z/2;
     color("brown")
     for (i=[1:support_count])
     {
