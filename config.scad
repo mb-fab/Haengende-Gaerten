@@ -50,9 +50,16 @@ support_count = 6;
 support_z = 25;
 
 // pot configuration: outer measures of the top opening
+// small pots:
+pot_x = 70;
+pot_y = 70;
+pot_z = 40;
+/*
+// medium size pots:
 pot_x = 80;
 pot_y = 80;
 pot_z = 50;
+*/
 
 // pots have hooks to hang at the wall supports
 hook_width = 10;

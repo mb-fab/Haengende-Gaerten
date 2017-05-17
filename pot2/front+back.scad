@@ -2,7 +2,7 @@
 include <../config.scad>;
 include <config.scad>;
 
-module pot_front()
+module pot_front_without_holes()
 {
     // upper edge of wall is at z=0
     translate([
@@ -31,6 +31,22 @@ module pot_front()
             material_z,
             pot_z/3
             ], center=true);
+}
+
+module pot_front()
+{
+    difference()
+    {
+        pot_front_without_holes();
+
+        // hole for the bottom plane's nose
+        translate([0, 0, - pot_z + material_z/2 + inset_bottom])
+        cube([
+            pot_x/3,
+            material_z + nothing,
+            material_z
+            ], center=true);
+    }
 }
 
 module pot_back()
