@@ -26,8 +26,11 @@ wall_x = 550;
 wall_y = 30;
 wall_z = 510;
 
-// the round top is added on top of the wall
-wall_round_top_z = 8;
+// the round top is added on the top and if applicable the bottom of the wall
+wall_round_vertical_z = 8;
+
+// whether or not to generate the wall side with feet
+wall_has_feet = true;
 
 // length of the foot towards the front and back of the wall (asymmetrical)
 foot_y_back = 100;
@@ -49,8 +52,8 @@ support_count = 8;
 // height of a support beam
 support_z = 25;
 
-// offset of first support from z=0
-support_z_offset = 50;
+// offset of first support from the z=0 plane
+support_z_offset = wall_has_feet ? 50 : 50;
 
 // pot configuration: outer measures of the top opening
 
