@@ -1,12 +1,12 @@
-# H&auml;ngende G&auml;rten
+# Vertikaler Garten
 
-<img width="500px" src="https://raw.githubusercontent.com/mb-fab/Haengende-Gaerten/master/model.png"/>
+<img width="500px" src="https://raw.githubusercontent.com/mb-fab/Haengende-Gaerten/master/doc/model.png"/>
 
-## Blumenk&auml;sten
+## Blumenkasten
 
-<img width="400px" src="https://raw.githubusercontent.com/mb-fab/Haengende-Gaerten/master/pot/pot.png"/>
-<img width="400px" src="https://raw.githubusercontent.com/mb-fab/Haengende-Gaerten/master/pot2/pot2.png"/>
+<img width="400px" src="https://raw.githubusercontent.com/mb-fab/Vertikaler-Garten/master/doc/pot2.png"/>
 
-## Aufh&auml;ngewand
+## Gestell
 
-<img width="500px" src="https://raw.githubusercontent.com/mb-fab/Haengende-Gaerten/master/wall/wall.png"/>
+<img width="500px" src="https://raw.githubusercontent.com/mb-fab/Haengende-Gaerten/master/doc/wall.png"/>
+
